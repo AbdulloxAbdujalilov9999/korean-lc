@@ -25,10 +25,10 @@ function normalize(s) {
 }
 
 // Defaults: native-Korean voices from ElevenLabs' shared voice library (not a generic English voice stretched via
-// the multilingual model, which is what this used to default to and sounded accented). "Yeonhee" (female, lively,
-// standard accent) and "JaeGyu" (male, calm, standard accent) — checked by ear against real lesson lines.
+// the multilingual model, which is what this used to default to and sounded accented). "Misa" (female) and
+// "JaeGyu" (male) — picked by ear against real lesson lines.
 // Uzbek: the same voice/model truck-talk-webapp already proved works for Uzbek narration (eleven_v4, native-sounding).
-const KO_VOICE = "vhhJX7dyal9WlYW2UAsj";       // Yeonhee
+const KO_VOICE = "2obFZ2qzlHVHizboKKN9";       // Misa
 const KO_VOICE_MALE = "gKJdDVRmX8dROO8aA5I8";  // JaeGyu
 const UZ_VOICE = "agoC45V78njTIxYzwmSb";
 
