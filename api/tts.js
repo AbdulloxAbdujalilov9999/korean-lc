@@ -24,14 +24,16 @@ function normalize(s) {
   return String(s == null ? "" : s).replace(/\s+/g, " ").trim();
 }
 
-// Defaults: premade ElevenLabs voices confirmed to speak both languages reasonably via the multilingual models.
-// Korean: "Yohan" (multilingual_v2 handles Korean officially). Uzbek: the same voice/model truck-talk-webapp
-// already proved works for Uzbek narration (eleven_v4, native-sounding).
-const KO_VOICE = "pNInz6obpgDQGcFmaJgB";
+// Defaults: native-Korean voices from ElevenLabs' shared voice library (not a generic English voice stretched via
+// the multilingual model, which is what this used to default to and sounded accented). "Yeonhee" (female, lively,
+// standard accent) and "JaeGyu" (male, calm, standard accent) — checked by ear against real lesson lines.
+// Uzbek: the same voice/model truck-talk-webapp already proved works for Uzbek narration (eleven_v4, native-sounding).
+const KO_VOICE = "vhhJX7dyal9WlYW2UAsj";       // Yeonhee
+const KO_VOICE_MALE = "gKJdDVRmX8dROO8aA5I8";  // JaeGyu
 const UZ_VOICE = "agoC45V78njTIxYzwmSb";
 
 function synthKo(env, gender, text) {
-  const voice = (gender === "male" ? env.ELEVENLABS_VOICE_KO_MALE : env.ELEVENLABS_VOICE_KO) || KO_VOICE;
+  const voice = (gender === "male" ? env.ELEVENLABS_VOICE_KO_MALE : env.ELEVENLABS_VOICE_KO) || (gender === "male" ? KO_VOICE_MALE : KO_VOICE);
   return fetch("https://api.elevenlabs.io/v1/text-to-speech/" + encodeURIComponent(voice) + "?output_format=mp3_44100_64", {
     method: "POST",
     headers: { "xi-api-key": env.ELEVENLABS_API_KEY, "content-type": "application/json", accept: "audio/mpeg" },
