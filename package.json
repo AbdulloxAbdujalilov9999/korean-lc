@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "Korean Talk — a self-paced Korean course for Uzbek speakers (Student's Book + Workbook), with an AI teacher.",
-  "type": "module",
   "scripts": {
     "build-voices": "node scripts/build-voice-phrases.mjs",
-    "dev": "python3 -m http.server 8743"
+    "dev": "python3 -m http.server 8743",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
