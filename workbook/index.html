@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uz" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Korean Talk — Mashq daftari</title>
+<meta name="description" content="Koreys tilini mashq qilish kursi — o'zbek tilida tushuntiriladi.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A3D63" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D2140" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../icons/icon-192.png">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Korean Talk">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/theme.css">
+<link rel="stylesheet" href="../shared/course.css">
+<script>try{localStorage.setItem("site_last_section","workbook")}catch(e){}</script>
+<script>
+  try{
+    var t = (JSON.parse(localStorage.getItem("ktwb_settings_v1")||"{}")||{}).theme;
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  }catch(e){}
+</script>
+<script>window.KT_CONFIG = { ns: "ktwb", title: "Mashq daftari", brand: "Korean Talk" };</script>
+</head>
+<body>
+<div id="appShell">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img class="brand-logo" src="../icons/icon-192.png" alt="" width="34" height="34">
+        <div class="brand-text">
+          <span class="brand-mark">KOREAN TALK</span>
+          <span class="brand-sub">MASHQ DAFTARI</span>
+        </div>
+      </div>
+      <nav id="mainNav" aria-label="Asosiy"></nav>
+    </div>
+  </header>
+  <main id="app"></main>
+</div>
+
+<div id="toast"></div>
+<div id="modalRoot"></div>
+
+<script src="curriculum.js"></script>
+<script src="../shared/grammar.js"></script>
+<script src="../shared/neural-voice.js"></script>
+<script src="../shared/teach-script.js"></script>
+<script src="../shared/teach-ui.js"></script>
+<script src="../shared/tutor-ui.js"></script>
+<script src="../shared/course-engine.js"></script>
+<script>
+  if ("serviceWorker" in navigator){
+    window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));
+  }
+</script>
+</body>
+</html>

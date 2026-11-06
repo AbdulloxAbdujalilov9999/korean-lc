@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="uz" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="google" content="notranslate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Korean Talk — Koreys tilini o'rganing</title>
+<meta name="description" content="Koreys tilini o'zbek tilida o'rganing: O'quvchi kitobi va Mashq daftari, AI o'qituvchi bilan.">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1A3D63" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D2140" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Korean Talk">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="shared/tokens.css">
+<link rel="stylesheet" href="shared/theme.css">
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg,#0A1931);font-family:'Inter',sans-serif;padding:24px;box-sizing:border-box;}
+  .hub{max-width:640px;width:100%;}
+  .hub h1{color:#fff;font-size:clamp(1.6rem,5vw,2.4rem);margin:0 0 8px;text-align:center;}
+  .hub p.sub{color:#B3CFE5;text-align:center;margin:0 0 32px;font-size:1.05rem;}
+  .cards{display:grid;gap:18px;grid-template-columns:1fr;}
+  @media(min-width:640px){.cards{grid-template-columns:1fr 1fr;}}
+  .card{display:block;background:#fff;border-radius:18px;padding:26px 22px;text-decoration:none;color:#0A1931;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .15s;}
+  .card:hover{transform:translateY(-3px);}
+  .card b{display:block;font-size:1.25rem;margin-bottom:6px;}
+  .card span{display:block;color:#4D6684;font-size:.95rem;line-height:1.4;}
+  .card .badge{display:inline-block;margin-top:14px;padding:6px 14px;border-radius:999px;background:#EAF2F9;color:#1A3D63;font-weight:700;font-size:.85rem;}
+</style>
+</head>
+<body>
+<div class="hub">
+  <h1>Korean Talk</h1>
+  <p class="sub">Koreys tilini o'zbek tilida, AI o'qituvchi bilan o'rganing</p>
+  <div class="cards">
+    <a class="card" href="studentsbook/">
+      <b>O'quvchi kitobi</b>
+      <span>Yangi so'zlar, suhbatlar, grammatika va rolli o'yinlar bilan to'liq kurs. 1A dan 1B gacha.</span>
+      <span class="badge">Boshlash &rarr;</span>
+    </a>
+    <a class="card" href="workbook/">
+      <b>Mashq daftari</b>
+      <span>O'quvchi kitobidagi mavzularni mustahkamlovchi qo'shimcha so'z va mashqlar. 1A dan 1B gacha.</span>
+      <span class="badge">Boshlash &rarr;</span>
+    </a>
+  </div>
+</div>
+<script>
+  try{
+    var last = localStorage.getItem("site_last_section");
+    if (last === "studentsbook" || last === "workbook") {
+      // uncomment to auto-redirect returning visitors instead of showing the picker:
+      // location.replace(last + "/");
+    }
+  }catch(e){}
+</script>
+</body>
+</html>
