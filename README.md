@@ -85,10 +85,13 @@ Each `curriculum.js` is an array of unit objects:
 ```
 
 A review unit (`"rev":true`) carries only `qz`/`sp`, no `v`/`dl`/`g`. The final test unit (`"final":true`) carries
-only `d`/`lvl`/`t`/`tu` — its questions are generated automatically. Both courses currently ship a pilot: 3 teaching
-units + 1 review per level (8 units) + the final test, per course. Add more units following the same shape — the
-engine, AI teacher, and final-test question bank all pick up new content automatically; just re-run
-`npm run build-voices` afterward so new Korean lines are allowed through `/api/tts`.
+only `d`/`lvl`/`t`/`tu` — its questions are generated automatically (1 vocab + 1 quiz question per lesson, pulled
+from every non-review unit). Both courses now cover the full 16-unit scope (41 "days" each: 32 teaching lessons +
+8 reviews, one every 2 units + the final test), matching SNU Korean+ 1A/1B's real unit-by-unit coverage — the
+Workbook mirrors the same 16 units with complementary vocabulary/situations rather than repeating the Student's
+Book's words. Add more content following the same shape — the engine, AI teacher, and final-test question bank all
+pick up new content automatically; just re-run `npm run build-voices` afterward so new Korean lines are allowed
+through `/api/tts`.
 
 ## Still open
 
@@ -97,4 +100,5 @@ engine, AI teacher, and final-test question bank all pick up new content automat
 - `ELEVENLABS_API_KEY` / Korean voice choice / `ANTHROPIC_API_KEY` / `ELEVENLABS_AGENT_ID` are all unset — the app
   runs fine without them (graceful fallback everywhere), but the AI teacher stays silent/disabled until provided.
 - Branding icons in `icons/` are still the placeholder TruckTalk ones, copied over during scaffolding.
-- Content is a pilot (8 units + final test per course) — extend following the schema above.
+- Content now covers the full 16-unit/32-lesson scope of SNU Korean+ 1A/1B per course (41 "days" each, including
+  reviews and the final test) — extend further following the schema above if more depth per unit is wanted.

@@ -1426,8 +1426,8 @@ function persistGrammarQuizState(){ const flat = {}; Object.keys(state.grammarQu
 function buildFinalTestQuestions(){
   const lessons = CURRICULUM.filter(d => !d.final && d.v && d.v.length);
   const fromEachLesson = lessons.flatMap(d => {
-    const own = (d.qz || []).slice(0, 2).map(q => q.slice());
-    const vocab = generateVocabQuestions(d.v, 2);
+    const own = (d.qz || []).slice(0, 1).map(q => q.slice());
+    const vocab = generateVocabQuestions(d.v, 1);
     return own.concat(vocab);
   });
   return shuffle(fromEachLesson);
